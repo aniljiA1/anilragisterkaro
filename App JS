@@ -1,0 +1,7 @@
+import Comment from './components/Comment'
+
+import './App.css'
+
+const App = () => <Comment />
+
+export default App
