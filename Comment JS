@@ -1,0 +1,53 @@
+const [formData, setFormData] = useState({email: '', password: ''})
+
+  const handleChange = e => {
+    console.log('EVENT', e)
+
+    setFormData({...formData, [e.target.name]: e.target.value})
+  }
+  const handleSubmit = async e => {
+    e.preventDefault()
+  }
+  return (
+    <>
+      <div>
+        <h1>Sign up to comments</h1>
+        <div>
+          <div>
+            <p>
+              <span>G </span> Continue with Google
+            </p>
+          </div>
+          <div>
+            <p>or</p>
+          </div>
+
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="email">Email: </label>
+              <input
+                type="text"
+                name="email"
+                placeholder="email"
+                value={formData.email}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="email">Password: </label>
+              <input
+                type="text"
+                name="password"
+                placeholder="password"
+                value={formData.password}
+                onChange={handleChange}
+              />
+            </div>
+          </form>
+        </div>
+        <button type="submit">Continue with email</button>
+      </div>
+    </>
+  )
+}
+export default Comment
